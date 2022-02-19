@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+export class produto {
 
-
-
-
-
+constructor (id, produtoNome, produtoValue, produtoImage){
+    this.id = id;
+    this.produtoNome = produtoNome;
+    this.produtoValue = produtoValue;
+    this.produtoImage = produtoImage;
+}
+}
 
 const Header = styled.header `
 display: flex;
@@ -181,7 +185,7 @@ export default class StyledHome extends React.Component {
             /ProdutosDiv>
 
         <
-        CarrinhoDiv > { /* <h1>Essa div é para os carrinhos</h1> */ } <
+        CarrinhoDiv > { formatPrice } <
             H2TitulosDasDivs > Carrinho < /H2TitulosDasDivs> <
             /CarrinhoDiv>
 
