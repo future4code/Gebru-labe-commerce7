@@ -33,3 +33,251 @@
     ]
   }
 }
+
+
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@marceloprestes 
+future4code
+/
+Gebru-labe-commerce7
+Public
+generated from future4code/labe-commerce-template
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+1st Push - estruturação da page
+ master (#1)
+@VictorTsuka
+VictorTsuka committed yesterday 
+1 parent 3a6f9fb commit 5106cc208a38810b2c7c5e67609952921c2dc802
+Showing  with 35,354 additions and 62 deletions.
+ 35,200  package-lock.json 
+Large diffs are not rendered by default.
+
+  3  package.json 
+@@ -8,7 +8,8 @@
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+ 38  src/App.css 
+This file was deleted.
+
+ 62  src/App.js 
+@@ -1,26 +1,42 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+import StyledHome from "./components/produtos/styledHome/StyledHome"
+
+
+
+export default class App extends React.Component {
+    state = {
+
+    }
+    render() {
+
+
+        return ( <
+            >
+            <
+            StyledHome / >
+            <
+            />
+        );
+    }
+}
+
+export default App;
+
+
+
+
+// Enunciado:
+// Caros alunos,
+// Estou querendo montar um e-commerce de itens espaciais e vocês serão responsáveis por essa construção. 
+// Pretendo montar diferentes linhas de produtos.
+//  As possíveis linhas de produto são:
+// - Satélites antigos;
+// - Roupas espaciais;
+// - Camisetas com estampas divertidas relacionadas ao espaço;
+// - Viagens espaciais;
+// - Meteoritos / aerolitos como pedras preciosas;
+// - Brinquedos e produtos infantis temáticos;
+// - Naves / Foguetes / Ônibus espaciais;
+// Escolham uma linha dentro do grupo de vocês, e criem um e-commerce de acordo com as especificações.
+// O prazo é até sexta, 23h59. Sem atrasos.
+// Como de costume, espero uma entrega no mínimo impecável.
+// Att. 
+ 113  src/components/produtos/styledHome/StyledHome.js 
+@@ -0,0 +1,113 @@
+import React from 'react'
+import styled from 'styled-components'
+
+const Botão = styled.button `
+display: flex;
+margin: 0 auto;
+`
+
+const Header = styled.header `
+display: flex;
+width: 100vw;
+height: 10vh;
+background-color: #E9F4F1;
+`
+
+const H1Header = styled.h1 `
+display: flex;
+margin: 0 auto;
+padding-top: 2vh;
+color: black;
+`
+
+const BodyPage = styled.div `
+background-color: #E1F58F;
+width: 100vw;
+height: 100vh;
+`
+const CentralDivs = styled.div `
+display: flex;
+max-width: 100vw;
+max-height: 100vh;
+`
+const FiltroDiv = styled.div `
+display:flex;
+width: 20vw;
+height: 30vw;
+background-color: pink;
+`
+const ProdutosDiv = styled.div `
+display:flex;
+width: 60vw;
+height: 30vw;
+background-color: orange;
+`
+const CarrinhoDiv = styled.div `
+display:flex;
+width: 20vw;
+height: 30vw;
+background-color: red;
+`
+const H2TitulosDasDivs = styled.h2 `
+margin-left: 2vw;
+`
+
+const Footer = styled.footer `
+display: flex;
+width: 100vw;
+height: 8vh;
+max-width: 100vw;
+max-height: 8vh;
+background-color: #E9F4F1;
+`
+
+const FooterH2 = styled.h2 `
+display: flex;
+margin: 0 auto;
+`
+
+export default class StyledHome extends React.Component {
+    state = {
+
+    }
+
+    onChangeInputSearch = (event) => {
+        this.setState({ nomeDoInput: event.target.value })
+    }
+
+
+    render() {
+        return <BodyPage >
+            <
+            Header >
+            <
+            H1Header > LabECommerce < /H1Header> <
+            /Header> <
+            CentralDivs >
+            <
+            FiltroDiv > { /* <h1>Essa div é para os filtros</h1> */ } <
+            H2TitulosDasDivs > Filtros < /H2TitulosDasDivs> <
+            /FiltroDiv>
+
+        <
+        ProdutosDiv > { /* <h1>Essa div é para os produtos</h1> */ }
+
+        <
+        H2TitulosDasDivs > Produtos < /H2TitulosDasDivs> <
+            /ProdutosDiv>
+
+        <
+        CarrinhoDiv > { /* <h1>Essa div é para os carrinhos</h1> */ } <
+            H2TitulosDasDivs > Carrinho < /H2TitulosDasDivs> <
+            /CarrinhoDiv>
+
+        <
+        /CentralDivs> <
+        Footer >
+            <
+            FooterH2 > Footer Aqui!(pra adicionar links, se quiser) < /FooterH2> <
+            /Footer> <
+            /BodyPage>
+    }
+} 
+0 comments on commit 5106cc2
+@marceloprestes
+ 
+ 
+Leave a comment
+Nenhum arquivo selecionado
+Attach files by dragging & dropping, selecting or pasting them.
+ You’re not receiving notifications from this thread.
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Copied!
