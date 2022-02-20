@@ -147,12 +147,29 @@ export default class StyledHome extends React.Component {
         ]
     }
 
+    irParaCarrinho = () => {
+		this.setState({telaAtual: "carrinho"})
+        carrinho = <carrinho onClick={this.carrinho}
+
+	}
+
+
+    renderizaTelaAtual = () => {
+		if (this.state.telaAtual === "home"){
+			return <TelaHome />
+		} else if (this.state.telaAtual === "carrinho"){
+			return <TelaCarrinho />
+		} else if (this.state.telaAtual === "perfil"){
+			return <TelaPerfil />
+		}
+	}
+
     onChangeInputSearch = (event) => {
         this.setState({ inputFilter: event.target.value })
     }
 
     adicionarNoCarrinho = () => {
-
+        this.setSate({carrinho: true})
     }
 
     render() {
@@ -163,8 +180,8 @@ export default class StyledHome extends React.Component {
                 ProdutoImage src = { produto.produtoImage }
                 /> <
                 ProdutoName > { produto.produtoNome } < /ProdutoName> <
-                ProdutoValue > { produto.produtoValue } < /ProdutoValue> <
-                button onClick = "" > Adicionar ao carrinho < /button> <
+                ProdutoValue > { produto.produtoValue } < /ProdutoValue> 
+                <button onClick = "" > Adicionar ao carrinho < /button> <
                 /ProdutoContainer>
             )
         })
@@ -180,14 +197,14 @@ export default class StyledHome extends React.Component {
             H2TitulosDasDivs > Filtros < /H2TitulosDasDivs> <
             /FiltroDiv>
 
-        <
-        ProdutosDiv > { listaDeProdutos } <
-            /ProdutosDiv>
+        <ProdutosDiv > { listaDeProdutos } </ProdutosDiv>
 
-        <
-        CarrinhoDiv > { formatPrice } <
-            H2TitulosDasDivs > Carrinho < /H2TitulosDasDivs> <
-            /CarrinhoDiv>
+        <CarrinhoDiv> { formatPrice } 
+            <H2TitulosDasDivs > Carrinho </H2TitulosDasDivs>
+            <p>Total R$</p>
+        
+        
+        </CarrinhoDiv>
 
         <
         /CentralDivs> <

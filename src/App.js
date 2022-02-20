@@ -5,6 +5,8 @@ import StyledHome from "./components/produtos/styledHome/StyledHome"
 
 export default class App extends React.Component {
     state = {
+        carrinho = false
+
 
     }
     render() {
@@ -19,6 +21,8 @@ export default class App extends React.Component {
         );
     }
 }
+
+
 
 
 
